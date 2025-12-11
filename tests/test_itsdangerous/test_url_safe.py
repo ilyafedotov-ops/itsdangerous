@@ -1,3 +1,4 @@
+import zlib
 from functools import partial
 
 import pytest
@@ -26,7 +27,7 @@ class TestURLSafeSerializer(TestSerializer):
         with pytest.raises(BadPayload) as exc_info:
             serializer.loads(signed)
 
-        assert exc_info.value.original_error is not None
+        assert isinstance(exc_info.value.original_error, zlib.error)
 
 
 class TestURLSafeTimedSerializer(TestURLSafeSerializer, TestTimedSerializer):
