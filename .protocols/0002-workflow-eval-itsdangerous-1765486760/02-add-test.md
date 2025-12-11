@@ -1,27 +1,11 @@
-# Step 02: Add minimal missing unit test
+(Protocol 0002, Step 02):
 
-## Briefing
-- **Goal:** Implement the selected small missing test using existing test patterns.
-- **Key files:**
-  - Relevant `tests/...` file(s) per Step 1 findings
-  - Any fixtures/helpers referenced
-- **Additional info:** Keep changes minimal; avoid refactors; reuse fixtures/utilities.
+**Done**: tightened `test_bad_payload_compressed_marker` in `tests/test_itsdangerous/test_url_safe.py` to assert the preserved `zlib.error`; refreshed protocol artifacts (`.protocols/.../log.md`, `.protocols/.../context.md`) and accepted pre-commit’s trailing-whitespace cleanup in `.protocols/0002-workflow-eval-itsdangerous-1765486760/04-finalize.md`.
 
-## Sub-tasks
-1. Re-read `context.md` to confirm the chosen missing test and target module.
-2. Open the target `tests/...` file and locate nearby patterns to mirror (naming, fixtures, markers).
-3. Draft the new test case following the existing style; use existing fixtures/helpers where possible.
-4. If the test needs data/setup, add the smallest fixture/helper tweak necessary in the same area; avoid cross-file refactors.
-5. Ensure imports are minimal and ordered per project convention; keep formatting consistent.
-6. Run the most-focused test target (e.g., `pytest tests/path/test_file.py -k <name>`) to confirm the new case works before broader checks.
-7. Note in `log.md` what was added and why, including any helper tweaks.
+**Checks**: `uv run --locked pytest tests/test_itsdangerous/test_url_safe.py -k bad_payload_compressed_marker` (pass); `uv run --locked tox run -e py3.13` (pass); `uv run --locked tox run -e style` (pass after whitespace cleanup); `uv run --locked tox run -e typing` (pass).
 
-## Workflow
-1. Execute sub-tasks.
-2. Verify: run `lint`, `typecheck`, `test` (scope as needed). Fix failures.
-3. Fix/record:
-   - Add to `log.md` what/why (non-obvious decisions).
-   - Update `context.md`: increment `Current Step`, set `Next Action`.
-   - Check `main` for stray files from our branch.
-4. Commit: `git add .` then `git commit -m "feat(scope): subject [protocol-0002/02]"`. Push.
-5. Report to user using the step report format above.
+**Git**: PR https://github.com/ilyafedotov-ops/itsdangerous/pull/1; branch `0002-workflow-eval-itsdangerous-1765486760`; commit `feat(tests): tighten urlsafe compressed marker error [protocol-0002/02]` (db25583) pushed; main branch untouched/working tree clean.
+
+**Working directory**: /home/ilya/Documents/dev-pipeline/projects/github.com/pallets/itsdangerous/worktrees/tasksgodzilla-worktree
+
+**Protocol status**: Step 2 complete; context advanced to Step 3 (run CI tox envs per `03-run-tests.md`).
