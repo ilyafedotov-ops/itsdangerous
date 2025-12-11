@@ -8,3 +8,5 @@ This is an append-only log:
 - 2025-12-11 21:12:24 UTC - 01-repo-scan.md executed via Codex (gpt-5.1-codex-max); QA pending.
 - 2025-12-11 21:25:00 UTC - Step 2 add-test: added URLSafeSerializer compressed-marker BadPayload regression test using serializer_factory/zlib path to ensure decompress errors populate original_error; prepared to run full tox checks next.
 - 2025-12-11 21:40:00 UTC - Step 3 run-tests: after commit d275f09, mirrored CI via `uv run --locked tox run -e py3.13`, `uv run --locked tox run -e style`, and `uv run --locked tox run -e typing`; all commands passed, no fixes required.
+- 2025-12-11 21:19:22 UTC - 03-run-tests.md executed via Codex (gpt-5.1-codex-max); QA pending.
+- 2025-12-11 21:50:00 UTC - Step 4 finalize: confirmed scope complete, reran `uv run --locked tox run -e py3.13`, `uv run --locked tox run -e style`, and `uv run --locked tox run -e typing` on commit d275f09 (all passing), updated protocol context/log, and readied branch for review.

@@ -1,7 +1,7 @@
-- **Current Step**: 4
-- **Status**: Not Started
-- **Last Action Summary**: "Step 3 mirrored CI tox runs (py3.13 tests, style, typing) after Step 2 commit d275f09; all green and no fixes needed."
-- **Next Action**: "Start Step 4 (see `04-finalize.md`): perform final verification, tidy protocol context/log, and prepare handoff."
-- **Git**: "Branch 0002-workflow-eval-itsdangerous-1765486760 tracking origin with draft PR https://github.com/ilyafedotov-ops/itsdangerous/pull/1."
+- **Current Step**: done
+- **Status**: Ready for Review
+- **Last Action Summary**: "Step 4 finalize: re-read scope, reran `uv run --locked tox run -e py3.13`, `uv run --locked tox run -e style`, and `uv run --locked tox run -e typing` on commit d275f09 (all passing), updated protocol context/log, and confirmed branch clean."
+- **Next Action**: "Code review/merge via PR."
+- **Git**: "Branch 0002-workflow-eval-itsdangerous-1765486760 tracking origin; PR https://github.com/ilyafedotov-ops/itsdangerous/pull/1 ready for review."
 - **PROJECT_ROOT**: "/home/ilya/Documents/dev-pipeline/projects/github.com/pallets/itsdangerous"
 - **CWD**: "/home/ilya/Documents/dev-pipeline/projects/github.com/pallets/itsdangerous/worktrees/tasksgodzilla-worktree"
