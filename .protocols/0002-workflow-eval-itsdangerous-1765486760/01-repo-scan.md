@@ -1,36 +1,11 @@
-# Step 01: Scan repo tests and CI
+(Protocol 0002, Step 01)
 
-## Briefing
-- **Goal:** Understand existing tests/CI and identify one obvious small missing unit test to add.
-- **Key files:**
-  - `tests/` (or equivalent test directories)
-  - `.github/workflows/` and other CI configs
-  - `pyproject.toml`, `setup.cfg`, `tox.ini`, `noxfile.py` (if present)
-- **Additional info:** Keep notes on gaps; prefer minimal scope test addition.
+**Done**: mapped `tests/test_itsdangerous/` modules (encoding, signer, serializer, timed, url-safe with shared class fixtures); reviewed pyproject tox/pytest settings plus CI matrices (tests on 3.10–3.13 + PyPy, typing job, pre-commit); picked missing negative case to add next—`URLSafeSerializer` should raise `BadPayload` when a payload is flagged as compressed (leading dot) but contains non‑compressed base64 data; updated `.protocols/0002-workflow-eval-itsdangerous-1765486760/log.md` and `context.md` for the handoff to Step 2.
 
-## Sub-tasks
-1. Map tests:
-   - List top-level files/dirs under `tests/` to understand suite layout.
-   - Open representative test modules and fixtures/helpers to see patterns (naming, parametrization, markers).
-   - Note any helper utilities or common base classes used across tests.
-2. Inspect test commands:
-   - Check `pyproject.toml`, `setup.cfg`, `tox.ini`, `noxfile.py` for configured test/lint/typecheck commands and dependencies.
-   - Identify default test entry points (e.g., `pytest`, `tox -e test`, `nox -s tests`) and options/markers used.
-3. Review CI workflows:
-   - Read `.github/workflows/*` to see which jobs run tests/lint/typecheck and any env matrices or special flags.
-   - Note Python versions, optional dependencies, and caching or env setup relevant to running locally.
-4. Spot a missing test:
-   - From the observed patterns, find one small edge/negative/boundary case not currently covered that fits existing structure.
-   - Confirm the target code path and minimal fixture/helper reuse.
-5. Record decision:
-   - Write down the chosen test target, expected behavior, and rationale to reuse later in `log.md`.
+**Checks**: `uv run --locked tox run -e style` (pass); `uv run --locked tox run -e typing` (pass); `uv run --locked tox run -e py3.13` (pass).
 
-## Workflow
-1. Execute sub-tasks.
-2. Verify: run `lint`, `typecheck`, `test` (scope as needed). Fix failures.
-3. Fix/record:
-   - Add to `log.md` what/why (non-obvious decisions).
-   - Update `context.md`: increment `Current Step`, set `Next Action`.
-   - Check `main` for stray files from our branch.
-4. Commit: `git add .` then `git commit -m "feat(scope): subject [protocol-0002/01]"`. Push.
-5. Report to user using the step report format above.
+**Git**: draft PR https://github.com/ilyafedotov-ops/itsdangerous/pull/1 on branch `0002-workflow-eval-itsdangerous-1765486760`; committed `chore(protocol): repo scan [protocol-0002/01]` as a9e8e6d and pushed; working tree clean and only protocol files changed (main branch untouched).
+
+**Working directory**: /home/ilya/Documents/dev-pipeline/projects/github.com/pallets/itsdangerous/worktrees/tasksgodzilla-worktree
+
+**Protocol status**: Step 1 complete; ready to start Step 2 (`02-add-test.md`) to implement the URLSafeSerializer compressed-marker BadPayload test.
