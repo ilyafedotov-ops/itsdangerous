@@ -1,7 +1,7 @@
-- **Current Step**: 1
-- **Status**: In Progress
-- **Last Action Summary**: "Completed Step 0: published protocol branch, opened draft PR, and logged setup commit 7e63c46."
-- **Next Action**: "Start Step 1 (see `01-repo-scan.md`): review tests and CI, identify an obvious small missing unit test."
+- **Current Step**: 2
+- **Status**: Not Started
+- **Last Action Summary**: "Completed Step 1 scan: mapped tests (encoding/signing/serializer/timed/url-safe modules), reviewed tox/pytest configs and CI matrix, and picked missing BadPayload/decompress test for URLSafeSerializer; lint, typing, and py3.13 tests green."
+- **Next Action**: "Start Step 2 (see `02-add-test.md`): add the URLSafeSerializer compressed-marker BadPayload test identified in Step 1."
 - **Git**: "Branch 0002-workflow-eval-itsdangerous-1765486760 tracking origin with draft PR https://github.com/ilyafedotov-ops/itsdangerous/pull/1."
 - **PROJECT_ROOT**: "/home/ilya/Documents/dev-pipeline/projects/github.com/pallets/itsdangerous"
 - **CWD**: "/home/ilya/Documents/dev-pipeline/projects/github.com/pallets/itsdangerous/worktrees/tasksgodzilla-worktree"
