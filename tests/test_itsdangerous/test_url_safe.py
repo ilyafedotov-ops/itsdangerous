@@ -2,6 +2,7 @@ from functools import partial
 
 import pytest
 
+from itsdangerous.exc import BadPayload
 from itsdangerous.url_safe import URLSafeSerializer
 from itsdangerous.url_safe import URLSafeTimedSerializer
 from test_itsdangerous.test_serializer import TestSerializer
@@ -16,6 +17,16 @@ class TestURLSafeSerializer(TestSerializer):
     @pytest.fixture(params=({"id": 42}, pytest.param("a" * 1000, id="zlib")))
     def value(self, request):
         return request.param
+
+    def test_bad_payload_compressed_marker(self, serializer_factory):
+        serializer = serializer_factory()
+        payload = serializer.dump_payload({"id": 42})
+        signed = serializer.make_signer().sign(b"." + payload)
+
+        with pytest.raises(BadPayload) as exc_info:
+            serializer.loads(signed)
+
+        assert exc_info.value.original_error is not None
 
 
 class TestURLSafeTimedSerializer(TestURLSafeSerializer, TestTimedSerializer):
