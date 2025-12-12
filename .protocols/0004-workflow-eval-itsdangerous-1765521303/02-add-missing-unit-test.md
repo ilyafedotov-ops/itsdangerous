@@ -1,28 +1,11 @@
-# Step 02: Add missing unit test
+(Protocol, step): 0004-workflow-eval-itsdangerous-1765521303, Step 2
 
-## Briefing
-- **Goal:** Implement the missing unit test following existing patterns to cover the identified gap.
-- **Key files:**
-  - `tests/...` (target module and related fixtures)
-  - Project module(s) under test (e.g., `itsdangerous/...`)
-- **Additional info:** Reuse fixtures/helpers; keep style consistent with neighboring tests.
+**Done**: Added `tests/test_itsdangerous/test_url_safe.py:22` regression that feeds a fake compressed payload (`.` prefix + base64 of non-zlib data) and asserts `URLSafeSerializer.load_payload` raises `BadPayload` with an `original_error`, covering the decompress error path.
 
-## Sub-tasks
-1. Reopen findings from Step 1 to identify the exact behavior lacking coverage (module/function/path and scenario).
-2. Locate the matching test module under `tests/` (or closest neighbor); if absent, select an appropriate package path and filename to add.
-3. Inspect neighboring tests for style (fixtures, markers, parametrization, helper imports) to mirror patterns.
-4. Write the new test case(s) capturing the missing behavior, including assertions for expected outcome and any edge/negative variant identified.
-5. Ensure imports and fixtures align with project conventions; add/adjust minimal helpers only if required.
-6. Run focused pytest on the specific file or test node to confirm the new test executes: e.g., `python -m pytest tests/path/to/file.py::TestNameOrFunction`.
-7. If failures occur, refine the test (and only minimal code under test if strictly necessary) until the focused run passes.
-8. Stage changes for review (`git status` sanity check).
+**Checks**: `uv run python -m pytest tests/test_itsdangerous/test_url_safe.py::TestURLSafeSerializer::test_load_payload_bad_compressed_data` ✓; `uv run tox -e style` ✓; `uv run tox -e typing` ✓; `uv run tox -e py3.13` ✓.
 
-## Workflow
-1. Execute sub-tasks.
-2. Verify: run `lint`, `typecheck`, `test` (scope as needed). Fix failures.
-3. Fix/record:
-   - Add to `log.md` what/why (non-obvious decisions).
-   - Update `context.md`: increment `Current Step`, set `Next Action`.
-   - Check `main` for stray files from our branch.
-4. Commit: `git add .` then `git commit -m "test: add coverage for missing case [protocol-0004/02]"`. Push.
-5. Report to user using the step report format above.
+**Git**: Draft PR #3; branch `0004-workflow-eval-itsdangerous-1765521303`; commit `test: add coverage for missing case [protocol-0004/02]` (2b5b5db) pushed. Main worktree still only shows pre-existing untracked items (`.github/workflows/ci.yml`, `.gitlab-ci.yml`, `docs/ci.md`, `docs/tasksgodzilla.md`, `prompts/`, `schemas/`, `scripts/`, `worktrees/`).
+
+**Working directory**: /home/ilya/Documents/dev-pipeline/projects/github.com/pallets/itsdangerous/worktrees/tasksgodzilla-worktree
+
+**Protocol status**: Step 2 complete; ready to start Step 3 (03-run-tests-fix.md) to rerun the matrix and handle any trivial breakages.
