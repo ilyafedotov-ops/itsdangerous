@@ -1,7 +1,7 @@
-- **Current Step**: 0
-- **Status**: Not Started
-- **Last Action Summary**: "Plan generated, awaiting approval."
-- **Next Action**: "Start Step 0 (see `00-setup.md`)."
-- **Git**: "Branch 0003-workflow-eval-itsdangerous-1765518181 created, empty."
+- **Current Step**: 1
+- **Status**: In Progress
+- **Last Action Summary**: "Step 0 completed: committed protocol artifacts and log, pushed branch, opened draft PR #2."
+- **Next Action**: "Start Step 1: scan tests/CI (see `01-scan-tests-ci.md`)."
+- **Git**: "Branch 0003-workflow-eval-itsdangerous-1765518181 @ 0a6f2c4, draft PR #2 open."
 - **PROJECT_ROOT**: "/home/ilya/Documents/dev-pipeline/projects/github.com/pallets/itsdangerous"
 - **CWD**: "/home/ilya/Documents/dev-pipeline/projects/github.com/pallets/itsdangerous/worktrees/tasksgodzilla-worktree"
