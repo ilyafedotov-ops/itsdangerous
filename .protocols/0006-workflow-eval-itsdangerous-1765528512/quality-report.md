@@ -1,5 +1,5 @@
 Verdict: PASS
 
 Notes:
-- Context/log rolled forward to Step 3 after completing QA downgrade work in Step 2.
-- QA gating intentionally relaxed (warnings no longer fatal, typing checks less strict); tox style/typing/py3.13 all passing post-change.
+- Step 3 validation complete: `uv run --locked tox run -e style|typing|py3.13` all green after adding `stacklevel=2` to the warning test to satisfy ruff B028.
+- Validated commit: d7ab5a8 (test: add stacklevel for warning check); protocol context/log advanced to Step 4 readiness.
