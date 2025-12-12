@@ -1,7 +1,7 @@
-- **Current Step**: 0
-- **Status**: Not Started
-- **Last Action Summary**: "Plan generated, awaiting approval."
-- **Next Action**: "Start Step 0 (see `00-setup.md`)."
-- **Git**: "Branch 0005-workflow-eval-itsdangerous-1765524374 created, empty."
+- **Current Step**: 1
+- **Status**: In Progress
+- **Last Action Summary**: "Step 0: committed protocol artifacts (d4ee38e1/8601be2), opened draft PR #4, style/typing/py3.13 all passing."
+- **Next Action**: "Start Step 1 (see `01-discovery.md`): review QA prompt, code/tests, and record baseline checks."
+- **Git**: "Branch 0005-workflow-eval-itsdangerous-1765524374 @ 8601be2, draft PR #4 open."
 - **PROJECT_ROOT**: "/home/ilya/Documents/dev-pipeline/projects/github.com/pallets/itsdangerous"
 - **CWD**: "/home/ilya/Documents/dev-pipeline/projects/github.com/pallets/itsdangerous/worktrees/tasksgodzilla-worktree"
