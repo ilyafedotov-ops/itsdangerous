@@ -1,7 +1,7 @@
-- **Current Step**: 1
-- **Status**: In Progress
-- **Last Action Summary**: "Step 0: added protocol artifacts, pushed branch, opened draft PR #3, and ran tox (style, typing, py3.13) to confirm green."
-- **Next Action**: "Begin Step 1: scan tests/CI per `01-scan-tests-ci.md` and record findings."
-- **Git**: "Branch 0004-workflow-eval-itsdangerous-1765521303 @ fcb0534, draft PR #3 open."
+- **Current Step**: 2
+- **Status**: Ready
+- **Last Action Summary**: "Step 1: scanned tests/CI/tooling (tests/test_itsdangerous modules, no conftest, freeze_time mixin), noted target gap for URLSafeSerializerMixin.load_payload BadPayload handling, and ran lint/type/test via `uv run tox -e style`, `uv run tox -e typing`, `uv run tox -e py3.13` (all passed)."
+- **Next Action**: "Start Step 2: add URLSafeSerializerMixin.load_payload bad-payload coverage in `tests/test_itsdangerous/test_url_safe.py` using existing serializer fixtures/patterns."
+- **Git**: "Branch 0004-workflow-eval-itsdangerous-1765521303 @ HEAD, draft PR #3 open."
 - **PROJECT_ROOT**: "/home/ilya/Documents/dev-pipeline/projects/github.com/pallets/itsdangerous"
 - **CWD**: "/home/ilya/Documents/dev-pipeline/projects/github.com/pallets/itsdangerous/worktrees/tasksgodzilla-worktree"
