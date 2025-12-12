@@ -1,7 +1,7 @@
-- **Current Step**: 0
-- **Status**: Not Started
-- **Last Action Summary**: "Plan generated, awaiting approval."
-- **Next Action**: "Start Step 0 (see `00-setup.md`)."
-- **Git**: "Branch 0004-workflow-eval-itsdangerous-1765521303 created, empty."
+- **Current Step**: 1
+- **Status**: In Progress
+- **Last Action Summary**: "Step 0: added protocol artifacts, pushed branch, opened draft PR #3, and ran tox (style, typing, py3.13) to confirm green."
+- **Next Action**: "Begin Step 1: scan tests/CI per `01-scan-tests-ci.md` and record findings."
+- **Git**: "Branch 0004-workflow-eval-itsdangerous-1765521303 @ fcb0534, draft PR #3 open."
 - **PROJECT_ROOT**: "/home/ilya/Documents/dev-pipeline/projects/github.com/pallets/itsdangerous"
 - **CWD**: "/home/ilya/Documents/dev-pipeline/projects/github.com/pallets/itsdangerous/worktrees/tasksgodzilla-worktree"
