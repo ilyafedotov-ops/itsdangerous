@@ -1,7 +1,7 @@
-- **Current Step**: 2
+- **Current Step**: 3
 - **Status**: In Progress
-- **Last Action Summary**: "Step 1: scanned tests under tests/test_itsdangerous (encoding, signer, serializer, timed, url_safe; fixtures inside classes, no conftest; parametrization and freezegun usage) and CI workflows (tests matrix on Py3.10-3.13 + PyPy3.11 with Windows/Mac for 3.13 via tox/uv, typing job, pre-commit, publish, lock). Selected TimestampSigner.validate max_age expiration handling as the coverage target for Step 2."
-- **Next Action**: "Start Step 2: add the missing unit test for TimestampSigner.validate max_age expiration (see `02-add-missing-unit-test.md`)."
-- **Git**: "Branch 0003-workflow-eval-itsdangerous-1765518181 @ 9d4533d, draft PR #2 open."
+- **Last Action Summary**: "Step 2: added a TimestampSigner.validate(max_age) expiration test in tests/test_itsdangerous/test_timed.py using the existing FreezeMixin/signers to ensure expired signatures return False; ran uv run pytest tests/test_itsdangerous/test_timed.py."
+- **Next Action**: "Begin Step 3: run required checks (start with targeted pytest/tox per instructions), fix any trivial failures, and prepare for finalization per 03-run-tests-fix-trivial.md."
+- **Git**: "Branch 0003-workflow-eval-itsdangerous-1765518181 @ 936a4a1, draft PR #2 open."
 - **PROJECT_ROOT**: "/home/ilya/Documents/dev-pipeline/projects/github.com/pallets/itsdangerous"
 - **CWD**: "/home/ilya/Documents/dev-pipeline/projects/github.com/pallets/itsdangerous/worktrees/tasksgodzilla-worktree"

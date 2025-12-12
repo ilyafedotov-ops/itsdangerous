@@ -42,6 +42,15 @@ class TestTimestampSigner(FreezeMixin, TestSigner):
 
         assert exc_info.value.date_signed == ts
 
+    def test_validate_expired_max_age(self, signer, freeze):
+        signed = signer.sign("value")
+        freeze.tick(timedelta(seconds=11))
+
+        with pytest.raises(SignatureExpired):
+            signer.unsign(signed, max_age=10)
+
+        assert not signer.validate(signed, max_age=10)
+
     def test_return_timestamp(self, signer, ts):
         signed = signer.sign("value")
         assert signer.unsign(signed, return_timestamp=True) == (b"value", ts)
