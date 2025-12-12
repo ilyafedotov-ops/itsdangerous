@@ -1,30 +1,11 @@
-# Step 01: Discover requirements and baseline
+(Protocol 0005, step 01-discovery):
 
-## Briefing
-- **Goal:** Understand the QA prompt requirements, current implementation, and test baseline to scope changes.
-- **Key files:**
-  - `README.rst`
-  - `itsdangerous/` package modules relevant to QA prompt
-  - `tests/`
-- **Additional info:** Identify any existing tooling/config (lint, formatting) to align with.
+**Done**: QA prompt not present in `.protocols/0005-workflow-eval-itsdangerous-1765524374` (find/rg across repo); noted as open blocker for implementation. Reviewed README/docs and core modules (signer/serializer/timed/url_safe) for current behavior, edge cases, and usage patterns. Surveyed existing tests covering encoding, signer variants, serializer fallback/unsafe paths, timed expiry handling, and URL-safe compression; noted gaps relative to missing QA criteria (e.g., TimestampSigner.validate coverage, exotic rotation/algorithms). Recorded tooling commands and findings in `log.md`; advanced `context.md` to Step 2 readiness.
 
-## Sub-tasks
-1. Locate the bundled QA prompt under the protocol folder; read fully and extract acceptance criteria, constraints, and target behaviors into `log.md`.
-2. From the QA prompt, list the specific features/APIs implicated and any open questions; capture in `log.md`.
-3. Read `README.md` (and any linked quickstart/usage sections) to understand expected usage patterns related to the QA prompt.
-4. Identify and skim core modules in `src/itsdangerous/` matching the scoped features (e.g., serializer/signer modules); note current behavior and edge cases in `log.md`.
-5. Survey `tests/` for files covering the scoped behavior (use `rg` to find references); record what is already covered and any notable gaps.
-6. Inventory tooling/config: check `pyproject.toml` (and other configs if present) for lint/test/typecheck commands; write the go-to commands in `log.md`.
-7. If dependencies are missing, install per repo instructions; then run baseline tests from CWD with `python -m pytest` (or documented default). Record pass/fail details in `log.md`.
-8. Update `context.md` with a concise findings summary, baseline test result, current step completion, and planned focus for implementation.
-9. Keep code untouched in this step; only `log.md` and `context.md` should change.
+**Checks**: `uv run tox -e style` (pass), `uv run tox -e typing` (pass), `uv run tox -e py3.13` (pass, 297 tests).
 
-## Workflow
-1. Execute sub-tasks.
-2. Verify: run `lint`, `typecheck`, `test` (scope as needed). Fix failures.
-3. Fix/record:
-   - Add to `log.md` what/why (non-obvious decisions).
-   - Update `context.md`: increment `Current Step`, set `Next Action`.
-   - Check `main` for stray files from our branch.
-4. Commit: `git add .` then `git commit -m "feat(scope): subject [protocol-0005/01]"`. Push.
-5. Report to user using the step report format above.
+**Git**: PR https://github.com/ilyafedotov-ops/itsdangerous/pull/4 (draft); branch `0005-workflow-eval-itsdangerous-1765524374`; commit `feat(protocol): record discovery findings [protocol-0005/01]` (96cd62a) pushed; main remains untouched.
+
+**Working directory**: /home/ilya/Documents/dev-pipeline/projects/github.com/pallets/itsdangerous/worktrees/tasksgodzilla-worktree
+
+**Protocol status**: Step 1 completed; Step 2 ready to start once the missing QA prompt is supplied so requirements can be implemented.
