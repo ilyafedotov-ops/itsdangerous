@@ -5,6 +5,8 @@ Unreleased
 
 -   Drop support for Python 3.8 and 3.9.
 -   Remove previously deprecated code.
+-   Relax QA defaults: pytest no longer treats warnings as errors, and
+    typing checks run with reduced strictness (no pyright verifytypes).
 
 
 Version 2.2.0
