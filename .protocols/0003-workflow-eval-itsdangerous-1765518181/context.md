@@ -1,7 +1,7 @@
-- **Current Step**: 1
+- **Current Step**: 2
 - **Status**: In Progress
-- **Last Action Summary**: "Step 0 completed: committed protocol artifacts and log, pushed branch, opened draft PR #2."
-- **Next Action**: "Start Step 1: scan tests/CI (see `01-scan-tests-ci.md`)."
-- **Git**: "Branch 0003-workflow-eval-itsdangerous-1765518181 @ 0a6f2c4, draft PR #2 open."
+- **Last Action Summary**: "Step 1: scanned tests under tests/test_itsdangerous (encoding, signer, serializer, timed, url_safe; fixtures inside classes, no conftest; parametrization and freezegun usage) and CI workflows (tests matrix on Py3.10-3.13 + PyPy3.11 with Windows/Mac for 3.13 via tox/uv, typing job, pre-commit, publish, lock). Selected TimestampSigner.validate max_age expiration handling as the coverage target for Step 2."
+- **Next Action**: "Start Step 2: add the missing unit test for TimestampSigner.validate max_age expiration (see `02-add-missing-unit-test.md`)."
+- **Git**: "Branch 0003-workflow-eval-itsdangerous-1765518181 @ 9d4533d, draft PR #2 open."
 - **PROJECT_ROOT**: "/home/ilya/Documents/dev-pipeline/projects/github.com/pallets/itsdangerous"
 - **CWD**: "/home/ilya/Documents/dev-pipeline/projects/github.com/pallets/itsdangerous/worktrees/tasksgodzilla-worktree"
